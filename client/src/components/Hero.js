@@ -19,7 +19,7 @@ export default function Hero() {
                   href="#"
                   className="w-full flex items-center justify-center px-6 py-4 border border-transparent text-base font-medium rounded-md text-white bg-gray-900 divide-gray-600 hover:bg-gray-700 md:text-lg"
                 >
-                  <span className='pr-6'>Get started</span>
+                  <span className='pr-6'>Get the bundle</span>
                   <span className='pl-6'>$20</span>
                 </a>
               </div>
