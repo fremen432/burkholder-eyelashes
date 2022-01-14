@@ -58,7 +58,7 @@ const staticProducts = [
 
 export default function Products() {
   return (
-    <div className="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
+    <div className="max-w-2xl mx-auto pt-24 px-4 sm:pt-32 sm:px-6 lg:max-w-7xl lg:px-8">
         <h2 id="products-heading" className="sr-only">
           Products
         </h2>
@@ -66,7 +66,7 @@ export default function Products() {
         <div className="grid grid-cols-1 gap-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:gap-x-8">
           {staticProducts.map((product) => (
             <a key={product.id} href={product.href} className="group">
-              <div className="w-full aspect-w-1 aspect-h-1 rounded-lg overflow-hidden sm:aspect-w-2 sm:aspect-h-3">
+              <div className="w-full aspect-w-4 aspect-h-3 rounded-lg overflow-hidden">
                 <img
                   src={product.imageSrc}
                   alt={product.imageAlt}
