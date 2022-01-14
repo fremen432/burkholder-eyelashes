@@ -1,10 +1,19 @@
 import React from "react";
-import Nav from "./components/Navbar";
-import logo from './logo.svg';
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import Products from "./components/Products";
+import Footer from "./components/Footer";
 import './App.css';
 
 function App() {
-  return <Nav />;
+  return (
+    <>
+      <Navbar />
+      <Hero />
+      <Products />
+      <Footer />
+    </>
+  );
 }
 
 export default App;
