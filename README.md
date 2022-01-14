@@ -66,7 +66,7 @@ What things you need to install the software and how to install them.
 1. Clone this repo.
 2. Navigate to repo folder.
 3. Run `npm install` to install the packages listed above.
-4. Run `node server.js`
+4. Run `npm run start`
 5. Open a new tab in your browser and navigate to http://localhost:3000
 
 ## Contact <a name = "contact"></a>
