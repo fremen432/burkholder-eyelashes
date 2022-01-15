@@ -1,7 +1,7 @@
 const staticProducts = [
   {
     id: 1,
-    name: 'Perchek Industrie',
+    name: 'Perchek Industrie Design',
     href: '#',
     price: '$25',
     description: '3 sizes available',
@@ -10,7 +10,7 @@ const staticProducts = [
   },
   {
     id: 2,
-    name: 'Sharon McCutcheon',
+    name: 'Sharon McCutcheon Design',
     href: '#',
     price: '$25',
     description: '3 sizes available',
