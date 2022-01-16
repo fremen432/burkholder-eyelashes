@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Hero() {
   return (
-    <div className="bg-white">
+    <div className="">
       <div className="relative bg-gray-900">
         <div aria-hidden="true" className="absolute inset-0 overflow-hidden">
           <img
@@ -13,13 +13,13 @@ export default function Hero() {
         </div>
         <div aria-hidden="true" className="absolute inset-0 bg-gray-900 opacity-50" />
 
-        <div className="relative max-w-3xl mx-auto py-32 px-6 flex flex-col items-start text-left sm:py-64 lg:px-0">
+        <div className="relative max-w-3xl mx-auto xxl:ml-56 py-32 px-6 flex flex-col items-start text-left sm:py-64 lg:px-0">
           <h1 className="text-4xl font-extrabold tracking-tight text-white lg:text-6xl uppercase">Become everyone's favorite lash artist</h1>
           <p className="mt-4 text-xl text-white">
             We make lashes your clients love. Stock up on lash essentials you can trust.
           </p>
           <a
-            href="#"
+            href="/"
             className="mt-8 inline-block bg-white border border-transparent rounded-md py-3 px-8 text-base font-medium text-gray-900 hover:bg-gray-100 uppercase"
           >
             Start Shopping
