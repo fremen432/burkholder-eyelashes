@@ -21,7 +21,7 @@ const orders = [
   // More orders...
 ]
 
-export default function Example() {
+export default function OrderHistory() {
   return (
     <div className="bg-white">
       <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:pb-24 lg:px-8">

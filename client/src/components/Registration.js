@@ -1,6 +1,6 @@
 import { LockClosedIcon } from '@heroicons/react/solid'
 
-export default function Example() {
+export default function Registration() {
   return (
     <>
       {/*
@@ -67,7 +67,7 @@ export default function Example() {
               </div>
 
               <div className="text-sm">
-                <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500">
+                <a href="/" className="font-medium text-indigo-600 hover:text-indigo-500">
                   Forgot your password?
                 </a>
               </div>
