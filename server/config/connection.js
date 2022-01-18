@@ -1,9 +1,9 @@
 const mongoose = require('mongoose')
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/burkholder-eyelashes', 
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1/burkholder-eyelashes', 
     {
         useNewUrlParser: true, 
-        useUnifiedTopology: true
+        useUnifiedTopology: true,
     }
 );
 
