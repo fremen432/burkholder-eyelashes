@@ -19,13 +19,17 @@ const itemSchema = new Schema (
             type: Number,
             required: true
         },
+        price: {
+            type: Number,
+            required: true
+        },
         createdAt:{
             type: Date,
-            default: Date/now,
+            default: Date.now,
             get: timestamp => dateFormat(timestamp)
         },
         review: [reviewSchema],
-        seller:{
+        username:{
             type: String,
             required: false
         }

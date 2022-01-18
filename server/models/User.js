@@ -1,4 +1,5 @@
-const { Schema, model } = require('mongoose')
+const { Schema, model } = require('mongoose');
+const historySchema = require('./History')
 const bcrypt = require('bcrypt');
 
 const userSchema = new Schema(
@@ -26,6 +27,17 @@ const userSchema = new Schema(
                 ref: 'Item'
             }
         ],
+        history: [
+            {
+                type: Schema.Types.ObjectId,
+                ref: 'historySchema'
+            }
+        ],
+        //role_id: 1 for admin, 2 for user
+        role_id: {
+            type: Number,
+            required: true
+        }
     },
     {
         toJSON:{

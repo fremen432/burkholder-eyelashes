@@ -1,21 +1,18 @@
 const { Schema, Types } = require('mongoose');
 const dateFormat = require('../utils/dateFormat');
 
-const reviewSchema = new Schema (
+const historySchema = new Schema (
     {
-        reviewId: {
+        orderId: {
             type: Schema.Types.ObjectId,
             default: () => new Types.ObjectId()
         },
-        reviewBody:{
-            type: String,
-            required: true,
-            maxlength: 200
-        },
-        writtenBy: {
-            type: String,
-            required: true
-        },
+        items: [
+            {
+                type: Schema.Types.ObjectId,
+                ref: 'Item'
+            }
+        ],
         createdAt: {
             type: Date,
             default: Date.now,
@@ -29,4 +26,4 @@ const reviewSchema = new Schema (
     }
 );
 
-module.exports = reviewSchema;
+module.exports = historySchema;
