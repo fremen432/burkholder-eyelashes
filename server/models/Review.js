@@ -10,7 +10,6 @@ const reviewSchema = new Schema (
         reviewBody:{
             type: String,
             required: true,
-            maxlength: 200
         },
         writtenBy: {
             type: String,
@@ -20,7 +19,7 @@ const reviewSchema = new Schema (
             type: Date,
             default: Date.now,
             get: timestamp => dateFormat(timestamp)
-        }
+        },
     },
     {
         toJSON:{

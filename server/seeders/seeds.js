@@ -1,7 +1,9 @@
+const { random } = require('faker');
 const faker = require('faker');
 
 const db = require('../config/connection');
-const { Item, User } = require('../models');
+const { Item, User, History } = require('../models');
+const { create } = require('../models/Item');
 
 db.once('open', async () => {
   await Item.deleteMany({});
@@ -15,12 +17,13 @@ db.once('open', async () => {
     const email = faker.internet.email(username);
     const password = faker.internet.password();
 
-    const role_id = Math.floor(Math.random() * (2-1) + 1)
+    const role_id = Math.floor(Math.random() * (2) + 1)
 
     userData.push({ username, email, password, role_id });
   }
 
   const createdUsers = await User.collection.insertMany(userData)
+  console.log(createdUsers);
 
   //create items
   let createdItems = [];
@@ -30,8 +33,8 @@ db.once('open', async () => {
     const count = Math.round(Math.random() * 50 + 1);
     const price = Math.round(Math.random() * 100 + 10);
 
-    const randomUserIndex = Math.floor(Math.random() * createdUsers.ops.length);
-    const {username, _id: userId} = createdUsers.ops[randomUserIndex];
+    const randomUserIndex = Math.floor(Math.random() * userData.length);
+    const {username, _id: userId} = userData[randomUserIndex];
 
     const createdItem = await Item.create({name, description, count, price, username});
 
@@ -43,23 +46,43 @@ db.once('open', async () => {
     createdItems.push(createdItem)
   }
 
+  //create review
+  for(let i = 0; i < 100; i += 1){
+    const reviewBody = faker.lorem.words(Math.round(Math.random() * 5) + 1);
 
-  // // create reactions
-  // for (let i = 0; i < 100; i += 1) {
-  //   const reactionBody = faker.lorem.words(Math.round(Math.random() * 20) + 1);
+    const randomUserIndex = Math.floor(Math.random() * userData.length);
+    const writtenBy = userData[randomUserIndex].username;
 
-  //   const randomUserIndex = Math.floor(Math.random() * createdUsers.ops.length);
-  //   const { username } = createdUsers.ops[randomUserIndex];
+    const randomItemIndex = Math.floor(Math.random() * createdItems.length);
+    const {_id: itemId} = createdItems[randomItemIndex];
 
-  //   const randomThoughtIndex = Math.floor(Math.random() * createdThoughts.length);
-  //   const { _id: thoughtId } = createdThoughts[randomThoughtIndex];
+    await Item.updateOne(
+      { _id: itemId },
+      { $push: { review: { reviewBody, writtenBy }}},
+      { runValidators: true}
+    )
+  }
 
-  //   await Thought.updateOne(
-  //     { _id: thoughtId },
-  //     { $push: { reactions: { reactionBody, username } } },
-  //     { runValidators: true }
-  //   );
-  // }
+  //create history
+  for(let i = 0; i < 10; i += 1){
+    const randomUserIndex = Math.floor(Math.random() * userData.length);
+    const { username: username ,_id: userId } = userData[randomUserIndex];
+
+    let items = []
+    for(let i = 0; i < 10; i += 1){
+      const randomItemIndex = Math.floor(Math.random() * createdItems.length);
+      const { _id: itemId } = createdItems[randomItemIndex];
+      items.push(itemId);
+    };
+
+    const createdHistory = await History.create({username, items, userId});
+
+    await User.updateOne(
+      { _id: userId},
+      { $push: {history: createdHistory.orderId }}
+    )
+  }
+  
 
   console.log('all done!');
   process.exit(0);

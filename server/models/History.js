@@ -1,4 +1,4 @@
-const { Schema, Types } = require('mongoose');
+const { Schema, Types, model } = require('mongoose');
 const dateFormat = require('../utils/dateFormat');
 
 const historySchema = new Schema (
@@ -13,6 +13,14 @@ const historySchema = new Schema (
                 ref: 'Item'
             }
         ],
+        username: {
+            type: String,
+            required: true
+        },
+        userId: {
+            type: Schema.Types.ObjectId,
+            required: true
+        },
         createdAt: {
             type: Date,
             default: Date.now,
@@ -26,4 +34,6 @@ const historySchema = new Schema (
     }
 );
 
-module.exports = historySchema;
+const History = model('History', historySchema)
+
+module.exports = History;

@@ -30,7 +30,7 @@ const userSchema = new Schema(
         history: [
             {
                 type: Schema.Types.ObjectId,
-                ref: 'historySchema'
+                ref: "History"
             }
         ],
         //role_id: 1 for admin, 2 for user
