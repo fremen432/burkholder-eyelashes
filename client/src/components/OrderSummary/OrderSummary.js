@@ -11,7 +11,7 @@ const products = [
     imageAlt: 'Glass bottle with black plastic pour top and mesh insert.',
   },
 ]
-
+ 
 export default function OrderSummary() {
   return (
     <div className="bg-white">
