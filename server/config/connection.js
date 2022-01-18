@@ -6,3 +6,5 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/burkholder-eyel
         useUnifiedTopology: true
     }
 );
+
+module.exports = mongoose.connection;
