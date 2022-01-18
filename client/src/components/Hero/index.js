@@ -17,7 +17,7 @@ export default function Hero() {
             We make lashes your clients love. Stock up on lash essentials you can trust.
           </p>
           <a
-            href="/"
+            href="/products"
             className="mt-8 inline-block bg-white border border-transparent rounded-md py-3 px-8 text-base font-medium text-gray-900 hover:bg-gray-100 uppercase"
           >
             Start Shopping
@@ -27,3 +27,4 @@ export default function Hero() {
     </div>
   )
 }
+ 

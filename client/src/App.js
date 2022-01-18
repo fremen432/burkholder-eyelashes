@@ -1,19 +1,28 @@
 import React from "react";
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import Products from "./components/Products";
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Navbar from "./components/Nav";
+import Home from './pages/Home'
+import Selection from "./pages/Selection";
 import Footer from "./components/Footer";
+import Error from "./components/NoMatch";
+
 import './App.css';
 
 function App() {
   return (
     <>
-      <Navbar />
-      <Hero />
-      <Products />
-      <Footer />
+      <Router>
+        <Navbar />
+        
+        <Switch>
+          <Route exact path='/' component={Home}/>
+          <Route exact path='/products' component={Selection} />
+          <Route component={Error} />
+        </Switch>
+        <Footer />
+      </Router>
     </>
   );
 }
-
+ 
 export default App;

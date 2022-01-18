@@ -21,7 +21,7 @@ const categories = [
     description: 'Everything you need and nothing you dont to stock your lash studio.',
   },
 ]
-
+ 
 export default function Collections() {
   return (
     <div className="bg-white">

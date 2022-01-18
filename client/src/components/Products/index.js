@@ -37,7 +37,7 @@ const products = [
   },
   // More products...
 ]
-
+ 
 export default function Products() {
   return (
     <div className="">
