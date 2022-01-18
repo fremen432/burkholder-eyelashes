@@ -20,7 +20,7 @@ const orders = [
   },
   // More orders...
 ]
-
+ 
 export default function OrderHistory() {
   return (
     <div className="bg-white">
