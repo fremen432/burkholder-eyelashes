@@ -8,6 +8,7 @@ const { create } = require('../models/Item');
 db.once('open', async () => {
   await Item.deleteMany({});
   await User.deleteMany({});
+  await History.deleteMany({})
 
   // create user data
   const userData = [];
@@ -23,7 +24,6 @@ db.once('open', async () => {
   }
 
   const createdUsers = await User.collection.insertMany(userData)
-  console.log(createdUsers);
 
   //create items
   let createdItems = [];

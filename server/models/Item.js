@@ -32,6 +32,9 @@ const itemSchema = new Schema (
         username:{
             type: String,
             required: false
+        },
+        image:{
+            type: URL
         }
     },
     {
@@ -48,3 +51,8 @@ itemSchema.virtual('reviewCount').get(function() {
 const Item = model('Item', itemSchema);
 
 module.exports = Item;
+
+//estastic item bucket --> s3 (upload through a middleware) --> public access --> set permission to public
+//package multer  --> upload images (react client site)
+//dymanic generate url --> a link to --> push to schema
+//item product schema --> images url --> back to client
