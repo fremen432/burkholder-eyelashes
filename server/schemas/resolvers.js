@@ -7,12 +7,12 @@ const resolvers = {
     Query: {
         //fine one user and populate the items and history ref
         user: async (parent, {username}) => {
-            return User.findOne({username}).populate('items').populate('histories').exec()
+            return User.findOne({username}).populate('items').populate('history').exec()
         },
 
         //find all user and populate the item and history ref
         users: async () => {
-            return User.find().populate('items').populate('histories').exec();
+            return User.find().populate('items').populate('history').exec();
         },
 
         //find all item (review is already included because it is a schema under item). sort item by createdAt
