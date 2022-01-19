@@ -7,7 +7,7 @@ const typeDefs = gql`
         email: String!
         password: String!
         items: [Item]
-        history: [History]
+        histories: [History]
     }
 
     type Item{
