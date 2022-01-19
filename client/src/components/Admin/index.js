@@ -11,7 +11,7 @@ import {
 const navigation = [
   { name: 'Dashboard', href: '#', icon: HomeIcon, current: true },
   { name: 'Order History', href: '#', icon: SearchCircleIcon, current: false },
-  { name: 'Add', href: '#', icon: PlusIcon, current: false },
+  { name: 'Add Products', href: '#', icon: PlusIcon, current: false },
 ]
 
 function classNames(...classes) {
