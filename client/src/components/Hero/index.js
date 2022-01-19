@@ -11,7 +11,7 @@ export default function Hero() {
         </div>
         <div aria-hidden="true" className="absolute inset-0 bg-gray-900 opacity-50" />
 
-        <div className="relative max-w-3xl mx-auto xl:ml-56 py-32 px-6 flex flex-col items-start text-left sm:py-64 lg:px-0">
+        <div className="relative max-w-3xl mx-auto xxl:ml-56 py-32 px-6 flex flex-col items-start text-left sm:py-64 lg:px-0">
           <h1 className="text-4xl font-extrabold tracking-tight text-white lg:text-6xl uppercase">Become everyone's favorite lash artist</h1>
           <p className="mt-4 text-xl text-white">
             We make lashes your clients love. Stock up on lash essentials you can trust.
@@ -27,4 +27,3 @@ export default function Hero() {
     </div>
   )
 }
- 
