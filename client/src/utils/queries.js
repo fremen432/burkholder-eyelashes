@@ -65,7 +65,7 @@ export const QUERY_ITEMS = gpl`
 `;
 
 export const QUERY_ITEM = gql `
-    query item(itemId: ID!){
+    query item($itemId: ID!){
         item(itemId: $itemID){
             _id
             name
