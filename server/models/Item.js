@@ -33,9 +33,6 @@ const itemSchema = new Schema (
             type: String,
             required: false
         },
-        image:{
-            type: URL
-        }
     },
     {
         toJSON:{
