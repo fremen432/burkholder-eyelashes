@@ -1,45 +1,45 @@
 import { CheckIcon, ClockIcon, QuestionMarkCircleIcon, XIcon } from '@heroicons/react/solid'
- 
+
 const products = [
   {
     id: 1,
-    name: 'Basic Tee',
+    name: 'Volume Adhesive',
     href: '#',
-    price: '$32.00',
-    color: 'Sienna',
+    price: '$40.00',
+    color: 'Clear',
     inStock: true,
-    size: 'Large',
-    imageSrc: 'https://tailwindui.com/img/ecommerce-images/shopping-cart-page-01-product-01.jpg',
-    imageAlt: "Front of men's Basic Tee in sienna.",
+    size: 'Small',
+    imageSrc: 'https://cdn.shopify.com/s/files/1/0539/7102/6115/products/Adhesives_BLAV5_Volume5ml_Thumbnail_x190.jpg?v=1614031666',
+    imageAlt: "",
   },
   {
     id: 2,
-    name: 'Basic Tee',
+    name: 'Diamond Adhesive',
     href: '#',
-    price: '$32.00',
-    color: 'Black',
+    price: '$55.00',
+    color: 'Clear',
     inStock: false,
     leadTime: '3–4 weeks',
     size: 'Large',
-    imageSrc: 'https://tailwindui.com/img/ecommerce-images/shopping-cart-page-01-product-02.jpg',
-    imageAlt: "Front of men's Basic Tee in black.",
+    imageSrc: 'https://cdn.shopify.com/s/files/1/0539/7102/6115/products/Adhesives_BLDA5_Diamond5ml_Thumbnail_360x.jpg?v=1614015061',
+    imageAlt: "",
   },
   {
     id: 3,
-    name: 'Nomad Tumbler',
+    name: 'Onyx Adhesive',
     href: '#',
-    price: '$35.00',
+    price: '$65.00',
     color: 'White',
     inStock: true,
-    imageSrc: 'https://tailwindui.com/img/ecommerce-images/shopping-cart-page-01-product-03.jpg',
-    imageAlt: 'Insulated bottle with white base and black snap lid.',
+    imageSrc: 'https://cdn.shopify.com/s/files/1/0539/7102/6115/products/Adhesives_BLOA05_Onyx5ml_Thumbnail_360x.jpg?v=1614030217',
+    imageAlt: '',
   },
 ]
 
 export default function Cart() {
   return (
     <div className="bg-white">
-      <div className="max-w-2xl mx-auto pt-16 pb-24 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+      <div className="max-w-2xl px-4 pt-16 pb-24 mx-auto sm:px-6 lg:max-w-7xl lg:px-8">
         <h1 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">Shopping Cart</h1>
         <form className="mt-12 lg:grid lg:grid-cols-12 lg:gap-x-12 lg:items-start xl:gap-x-16">
           <section aria-labelledby="cart-heading" className="lg:col-span-7">
@@ -54,11 +54,11 @@ export default function Cart() {
                     <img
                       src={product.imageSrc}
                       alt={product.imageAlt}
-                      className="w-24 h-24 rounded-md object-center object-cover sm:w-48 sm:h-48"
+                      className="object-cover object-center w-24 h-24 rounded-md sm:w-48 sm:h-48"
                     />
                   </div>
 
-                  <div className="ml-4 flex-1 flex flex-col justify-between sm:ml-6">
+                  <div className="flex flex-col justify-between flex-1 ml-4 sm:ml-6">
                     <div className="relative pr-9 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:pr-0">
                       <div>
                         <div className="flex justify-between">
@@ -68,10 +68,10 @@ export default function Cart() {
                             </a>
                           </h3>
                         </div>
-                        <div className="mt-1 flex text-sm">
+                        <div className="flex mt-1 text-sm">
                           <p className="text-gray-500">{product.color}</p>
                           {product.size ? (
-                            <p className="ml-4 pl-4 border-l border-gray-200 text-gray-500">{product.size}</p>
+                            <p className="pl-4 ml-4 text-gray-500 border-l border-gray-200">{product.size}</p>
                           ) : null}
                         </div>
                         <p className="mt-1 text-sm font-medium text-gray-900">{product.price}</p>
@@ -97,19 +97,19 @@ export default function Cart() {
                         </select>
 
                         <div className="absolute top-0 right-0">
-                          <button type="button" className="-m-2 p-2 inline-flex text-gray-400 hover:text-gray-500">
+                          <button type="button" className="inline-flex p-2 -m-2 text-gray-400 hover:text-gray-500">
                             <span className="sr-only">Remove</span>
-                            <XIcon className="h-5 w-5" aria-hidden="true" />
+                            <XIcon className="w-5 h-5" aria-hidden="true" />
                           </button>
                         </div>
                       </div>
                     </div>
 
-                    <p className="mt-4 flex text-sm text-gray-700 space-x-2">
+                    <p className="flex mt-4 space-x-2 text-sm text-gray-700">
                       {product.inStock ? (
-                        <CheckIcon className="flex-shrink-0 h-5 w-5 text-green-500" aria-hidden="true" />
+                        <CheckIcon className="flex-shrink-0 w-5 h-5 text-green-500" aria-hidden="true" />
                       ) : (
-                        <ClockIcon className="flex-shrink-0 h-5 w-5 text-gray-300" aria-hidden="true" />
+                        <ClockIcon className="flex-shrink-0 w-5 h-5 text-gray-300" aria-hidden="true" />
                       )}
 
                       <span>{product.inStock ? 'In stock' : `Ships in ${product.leadTime}`}</span>
@@ -123,7 +123,7 @@ export default function Cart() {
           {/* Order summary */}
           <section
             aria-labelledby="summary-heading"
-            className="mt-16 bg-gray-50 rounded-lg px-4 py-6 sm:p-6 lg:p-8 lg:mt-0 lg:col-span-5"
+            className="px-4 py-6 mt-16 rounded-lg bg-gray-50 sm:p-6 lg:p-8 lg:mt-0 lg:col-span-5"
           >
             <h2 id="summary-heading" className="text-lg font-medium text-gray-900">
               Order summary
@@ -134,27 +134,27 @@ export default function Cart() {
                 <dt className="text-sm text-gray-600">Subtotal</dt>
                 <dd className="text-sm font-medium text-gray-900">$99.00</dd>
               </div>
-              <div className="border-t border-gray-200 pt-4 flex items-center justify-between">
+              <div className="flex items-center justify-between pt-4 border-t border-gray-200">
                 <dt className="flex items-center text-sm text-gray-600">
                   <span>Shipping estimate</span>
-                  <a href="#" className="ml-2 flex-shrink-0 text-gray-400 hover:text-gray-500">
+                  <a href="#" className="flex-shrink-0 ml-2 text-gray-400 hover:text-gray-500">
                     <span className="sr-only">Learn more about how shipping is calculated</span>
-                    <QuestionMarkCircleIcon className="h-5 w-5" aria-hidden="true" />
+                    <QuestionMarkCircleIcon className="w-5 h-5" aria-hidden="true" />
                   </a>
                 </dt>
                 <dd className="text-sm font-medium text-gray-900">$5.00</dd>
               </div>
-              <div className="border-t border-gray-200 pt-4 flex items-center justify-between">
+              <div className="flex items-center justify-between pt-4 border-t border-gray-200">
                 <dt className="flex text-sm text-gray-600">
                   <span>Tax estimate</span>
-                  <a href="#" className="ml-2 flex-shrink-0 text-gray-400 hover:text-gray-500">
+                  <a href="#" className="flex-shrink-0 ml-2 text-gray-400 hover:text-gray-500">
                     <span className="sr-only">Learn more about how tax is calculated</span>
-                    <QuestionMarkCircleIcon className="h-5 w-5" aria-hidden="true" />
+                    <QuestionMarkCircleIcon className="w-5 h-5" aria-hidden="true" />
                   </a>
                 </dt>
                 <dd className="text-sm font-medium text-gray-900">$8.00</dd>
               </div>
-              <div className="border-t border-gray-200 pt-4 flex items-center justify-between">
+              <div className="flex items-center justify-between pt-4 border-t border-gray-200">
                 <dt className="text-base font-medium text-gray-900">Order total</dt>
                 <dd className="text-base font-medium text-gray-900">$112.00</dd>
               </div>
@@ -163,7 +163,7 @@ export default function Cart() {
             <div className="mt-6">
               <button
                 type="submit"
-                className="w-full bg-indigo-600 border border-transparent rounded-md shadow-sm py-3 px-4 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-indigo-500"
+                className="w-full px-4 py-3 text-base font-medium text-white bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-indigo-500"
               >
                 Checkout
               </button>
