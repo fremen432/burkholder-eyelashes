@@ -79,7 +79,7 @@ db.once('open', async () => {
 
     await User.updateOne(
       { _id: userId},
-      { $push: {history: createdHistory.orderId }}
+      { $push: {histories: createdHistory.orderId }}
     )
   }
   

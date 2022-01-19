@@ -37,14 +37,14 @@ const products = [
   },
   // More products...
 ]
- 
+
 export default function Products() {
   return (
     <div className="">
       <div className="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
         <div className="md:flex md:items-center md:justify-between">
           <h2 className="text-2xl font-extrabold tracking-tight text-gray-900 uppercase">Trending products</h2>
-          <a href="#" className="hidden text-sm font-medium text-indigo-600 hover:text-indigo-500 md:block">
+          <a href="/products" className="hidden text-sm font-medium text-indigo-600 hover:text-indigo-500 md:block">
             Show More<span aria-hidden="true"> &rarr;</span>
           </a>
         </div>
@@ -72,8 +72,8 @@ export default function Products() {
         </div>
 
         <div className="mt-8 text-sm md:hidden">
-          <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500">
-            Shop the collection<span aria-hidden="true"> &rarr;</span>
+          <a href="/" className="font-medium text-indigo-600 hover:text-indigo-500">
+            Show More<span aria-hidden="true"> &rarr;</span>
           </a>
         </div>
       </div>

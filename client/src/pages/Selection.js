@@ -4,7 +4,7 @@ import Products from '../components/Products';
 const Selection = () => {
     return (
         <Products />
-    )
+            )
 }
 
-export default Selection;  
+export default Selection;
