@@ -1,7 +1,6 @@
 const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
-
     type User {
         _id: ID!
         username: String!
@@ -15,16 +14,16 @@ const typeDefs = gql`
         _id: ID
         name: String!
         description: String!
-        count: Number!
-        price: Number!
+        count: Int!
+        price: Int!
         review: [Review]
         username: String
-        image: URL
+        image: String
     }
 
     type History{
         orderId: ID!
-        items: [Items]
+        items: [Item]
         username: String!
         userId: ID!
         createdAt: String
@@ -48,20 +47,20 @@ const typeDefs = gql`
         items: [Item]
         item(itemId: ID!): Item
         histories: [History]
-        history(orderId): History
+        history(orderId: ID!): History
     }
 
     type Mutation {
-        addUser(username: String!, email: String!, password: String!, role_id: Number!): Auth
+        addUser(username: String!, email: String!, password: String!, role_id: Int!): Auth
         login(email: String!, password: String!): Auth
-        addItem(name: String!, description: String!, count: Number!, price: Number!, image: URL): Item
-        addReview(reviewBody: String!, writtenBy: String!): Review
-        addHistory(username: String, userId: ID!, items: Array!): History
+        addItem(name: String!, description: String!, count: Int!, price: Int!, image: String, username: String!): Item
+        addReview(itemId: ID!, reviewBody: String!, writtenBy: String!): Review
+        createHistory(username: String, userId: ID!): History
+        updateHistory(orderId: ID!, itemId: ID!): History
         removeItem(itemId: ID!): Item
         removeReview(itemId: ID!, reviewId: ID!): Review
         removeHistory(orderId: ID!): History
     }
-    
 `;
 
 module.exports = typeDefs;
