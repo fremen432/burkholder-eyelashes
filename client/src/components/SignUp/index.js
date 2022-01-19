@@ -1,16 +1,8 @@
 import { LockClosedIcon } from '@heroicons/react/solid'
- 
+
 export default function Registration() {
   return (
     <>
-      {/*
-        Update your template:
-
-        ```
-        <html class="h-full bg-gray-50">
-        <body class="h-full">
-        ```
-      */}
       <div className="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-md w-full space-y-8">
           <div>

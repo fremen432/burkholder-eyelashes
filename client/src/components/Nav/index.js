@@ -6,7 +6,7 @@ import { BellIcon, MenuIcon, XIcon, UserIcon } from '@heroicons/react/outline'
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
- 
+
 export default function Navbar() {
   return (
     <Disclosure as="nav" className="bg-white shadow">
@@ -51,6 +51,18 @@ export default function Navbar() {
                     className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
                   >
                     About
+                  </a>
+                  <a
+                    href="/contact"
+                    className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+                  >
+                    Contact
+                  </a>
+                  <a
+                    href="/faq"
+                    className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+                  >
+                    FAQ
                   </a>
                 </div>
               </div>
