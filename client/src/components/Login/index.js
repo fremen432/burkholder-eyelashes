@@ -1,46 +1,8 @@
 import { LockClosedIcon } from '@heroicons/react/solid'
-import { useMutation } from '@apollo/client'
-import { LOGIN_USER } from '../../utils/mutation'
-import React, { useState } from 'react'
+import React from 'react'
 
-import Auth from '../../utils/auth';
 
 export default function Registration() {
-  const Login = (props) => {
-    const [formState, setFormState] = useState({ email: '', password: '' });
-    const [login, { error, data }] = useMutation(LOGIN_USER);
-  
-    // update state based on form input changes
-    const handleChange = (event) => {
-      const { name, value } = event.target;
-  
-      setFormState({
-        ...formState,
-        [name]: value,
-      });
-    };
-  
-    // submit form
-    const handleFormSubmit = async (event) => {
-      event.preventDefault();
-      console.log(formState);
-      try {
-        const { data } = await login({
-          variables: { ...formState },
-        });
-  
-        Auth.login(data.login.token);
-      } catch (e) {
-        console.error(e);
-      }
-  
-      // clear form values
-      setFormState({
-        email: '',
-        password: '',
-      });
-    };
-  
   return (
     <>
       <div className="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
@@ -52,8 +14,8 @@ export default function Registration() {
               alt="Workflow"
             />
           </div>
-          <form className="mt-8 space-y-6" action="#" method="POST" onSubmit={handleFormSubmit}>
-            <input type="hidden" name="remember" defaultValue="true" value={formState.email} onChange={handleChange}/>
+          <form className="mt-8 space-y-6" action="#" method="POST">
+            <input type="hidden" name="remember" defaultValue="true"/>
             <div className="rounded-md shadow-sm -space-y-px">
               <div>
                 <label htmlFor="email-address" className="sr-only">
@@ -81,8 +43,6 @@ export default function Registration() {
                   required
                   className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                   placeholder="Password"
-                  value={formState.password}
-                  onChange={handleChange}
                 />
               </div>
             </div>
@@ -123,4 +83,4 @@ export default function Registration() {
       </div>
     </>
   )
-}}
+}

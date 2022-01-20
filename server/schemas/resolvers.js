@@ -17,7 +17,7 @@ const resolvers = {
 
         //find all item (review is already included because it is a schema under item). sort item by createdAt
         items: async () => {
-            return Item.find().sort({ createdAt: -1 })
+            return Item.find().populate('review')
         },
 
         //find single item with the itemID
@@ -52,7 +52,7 @@ const resolvers = {
             const correctPw = await user.isCorrectPassword(password)
 
             if(!correctPw) {
-                throw new AuthenticationError('Incorrect credentials')
+                throw new AuthenticationError('Incorrect Password')
             }
 
             const token = signToken(user)
