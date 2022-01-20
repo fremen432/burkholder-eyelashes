@@ -75,7 +75,7 @@ db.once('open', async () => {
       items.push(itemId);
     };
 
-    const createdHistory = await History.create({username, items, userId});
+    const createdHistory = await History.create({username, items});
 
     await User.updateOne(
       { _id: userId},

@@ -25,7 +25,6 @@ const typeDefs = gql`
         orderId: ID!
         items: [Item]
         username: String!
-        userId: ID!
         createdAt: String
     }
 
@@ -55,7 +54,7 @@ const typeDefs = gql`
         login(email: String!, password: String!): Auth
         addItem(name: String!, description: String!, count: Int!, price: Int!, image: String, username: String!): Item
         addReview(itemId: ID!, reviewBody: String!, writtenBy: String!): Review
-        createHistory(username: String, userId: ID!): History
+        createHistory(username: String, itemArray: ID): History
         updateHistory(orderId: ID!, itemId: ID!): History
         removeItem(itemId: ID!): Item
         removeReview(itemId: ID!, reviewId: ID!): Review
