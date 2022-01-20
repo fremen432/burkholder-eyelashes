@@ -12,17 +12,17 @@ export default function Navbar() {
     <Disclosure as="nav" className="bg-white shadow">
       {({ open }) => (
         <>
-          <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
+          <div className="px-2 mx-auto max-w-7xl sm:px-4 lg:px-8">
             <div className="flex justify-between h-16">
               <div className="flex px-2 lg:px-0">
-                <div className="flex-shrink-0 flex items-center">
+                <div className="flex items-center flex-shrink-0">
                   <img
-                    className="block lg:hidden h-8 w-auto"
+                    className="block w-auto h-8 lg:hidden"
                     src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
                     alt="Company Logo"
                   />
                   <img
-                    className="hidden lg:block h-8 w-auto"
+                    className="hidden w-auto h-8 lg:block"
                     src="https://tailwindui.com/img/logos/workflow-logo-indigo-600-mark-gray-800-text.svg"
                     alt="Company Logo"
                   />
@@ -30,61 +30,79 @@ export default function Navbar() {
                 <div className="hidden lg:ml-6 lg:flex lg:space-x-8">
                   <a
                     href="/"
-                    className="border-indigo-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+                    className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-900 border-b-2 border-indigo-500"
                   >
                     Shop All
                   </a>
                   <a
                     href="/"
-                    className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+                    className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 border-b-2 border-transparent hover:border-gray-300 hover:text-gray-700"
                   >
                     Best Sellers
                   </a>
                   <a
                     href="/"
-                    className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+                    className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 border-b-2 border-transparent hover:border-gray-300 hover:text-gray-700"
                   >
                     Rewards
                   </a>
                   <a
                     href="/about"
-                    className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+                    className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 border-b-2 border-transparent hover:border-gray-300 hover:text-gray-700"
                   >
                     About
                   </a>
                   <a
                     href="/contact"
-                    className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+                    className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 border-b-2 border-transparent hover:border-gray-300 hover:text-gray-700"
                   >
                     Contact
                   </a>
                   <a
                     href="/faq"
-                    className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+                    className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 border-b-2 border-transparent hover:border-gray-300 hover:text-gray-700"
                   >
                     FAQ
                   </a>
                   <a
                     href="/admin"
-                    className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+                    className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 border-b-2 border-transparent hover:border-gray-300 hover:text-gray-700"
                   >
                     Admin
                   </a>
+                  <a
+                    href="/cart"
+                    className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 border-b-2 border-transparent hover:border-gray-300 hover:text-gray-700"
+                  >
+                    Cart
+                  </a>
+                  <a
+                    href="/orderhistory"
+                    className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 border-b-2 border-transparent hover:border-gray-300 hover:text-gray-700"
+                  >
+                    Order History
+                  </a>
+                  <a
+                    href="/ordersummary"
+                    className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 border-b-2 border-transparent hover:border-gray-300 hover:text-gray-700"
+                  >
+                    Order Summary
+                  </a>
                 </div>
               </div>
-              <div className="flex-1 flex items-center justify-center px-2 lg:ml-6 lg:justify-end">
-                <div className="max-w-lg w-full lg:max-w-xs">
+              <div className="flex items-center justify-center flex-1 px-2 lg:ml-6 lg:justify-end">
+                <div className="w-full max-w-lg lg:max-w-xs">
                   <label htmlFor="search" className="sr-only">
                     Search
                   </label>
                   <div className="relative">
-                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                      <SearchIcon className="h-5 w-5 text-gray-400" aria-hidden="true" />
+                    <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                      <SearchIcon className="w-5 h-5 text-gray-400" aria-hidden="true" />
                     </div>
                     <input
                       id="search"
                       name="search"
-                      className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                      className="block w-full py-2 pl-10 pr-3 leading-5 placeholder-gray-500 bg-white border border-gray-300 rounded-md focus:outline-none focus:placeholder-gray-400 focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                       placeholder="Search"
                       type="search"
                     />
@@ -93,31 +111,31 @@ export default function Navbar() {
               </div>
               <div className="flex items-center lg:hidden">
                 {/* Mobile menu button */}
-                <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                <Disclosure.Button className="inline-flex items-center justify-center p-2 text-gray-400 rounded-md hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
                   <span className="sr-only">Open main menu</span>
                   {open ? (
-                    <XIcon className="block h-6 w-6" aria-hidden="true" />
+                    <XIcon className="block w-6 h-6" aria-hidden="true" />
                   ) : (
-                    <MenuIcon className="block h-6 w-6" aria-hidden="true" />
+                    <MenuIcon className="block w-6 h-6" aria-hidden="true" />
                   )}
                 </Disclosure.Button>
               </div>
               <div className="hidden lg:ml-4 lg:flex lg:items-center">
                 <button
                   type="button"
-                  className="flex-shrink-0 bg-white p-1 text-gray-400 rounded-full hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                  className="flex-shrink-0 p-1 text-gray-400 bg-white rounded-full hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                 >
                   <span className="sr-only">View notifications</span>
-                  <BellIcon className="h-6 w-6" aria-hidden="true" />
+                  <BellIcon className="w-6 h-6" aria-hidden="true" />
                 </button>
 
                 {/* Profile dropdown */}
-                <Menu as="div" className="ml-4 relative flex-shrink-0">
+                <Menu as="div" className="relative flex-shrink-0 ml-4">
                   <div>
-                    <Menu.Button className="bg-white rounded-full flex text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                    <Menu.Button className="flex text-sm bg-white rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                       <span className="sr-only">Open user menu</span>
                       <img
-                        className="h-8 w-8 rounded-full"
+                        className="w-8 h-8 rounded-full"
                         src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                         alt=""
                       />
@@ -132,7 +150,7 @@ export default function Navbar() {
                     leaveFrom="transform opacity-100 scale-100"
                     leaveTo="transform opacity-0 scale-95"
                   >
-                    <Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+                    <Menu.Items className="absolute right-0 w-48 py-1 mt-2 origin-top-right bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                       <Menu.Item>
                         {({ active }) => (
                           <a
@@ -174,50 +192,50 @@ export default function Navbar() {
             <div className="pt-2 pb-3 space-y-1">
               <Disclosure.Button
                 as="a"
-                href="#"
-                className="bg-indigo-50 border-indigo-500 text-indigo-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
+                href="/"
+                className="block py-2 pl-3 pr-4 text-base font-medium text-indigo-700 border-l-4 border-indigo-500 bg-indigo-50"
               >
                 Shop All
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
-                href="#"
-                className="border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
+                href="/"
+                className="block py-2 pl-3 pr-4 text-base font-medium text-gray-600 border-l-4 border-transparent hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800"
               >
                 Best Sellers
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
-                href="#"
-                className="border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
+                href="/"
+                className="block py-2 pl-3 pr-4 text-base font-medium text-gray-600 border-l-4 border-transparent hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800"
               >
                 Rewards
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
-                href="#"
-                className="border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
+                href="/about"
+                className="block py-2 pl-3 pr-4 text-base font-medium text-gray-600 border-l-4 border-transparent hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800"
               >
                 About
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
-                href="#"
-                className="border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
+                href="/contact"
+                className="block py-2 pl-3 pr-4 text-base font-medium text-gray-600 border-l-4 border-transparent hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800"
               >
                 Contact
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
-                href="#"
-                className="border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
+                href="/faq"
+                className="block py-2 pl-3 pr-4 text-base font-medium text-gray-600 border-l-4 border-transparent hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800"
               >
                 FAQ
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
-                href="#"
-                className="border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
+                href="/admin"
+                className="block py-2 pl-3 pr-4 text-base font-medium text-gray-600 border-l-4 border-transparent hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800"
               >
                 Admin
               </Disclosure.Button>
@@ -226,7 +244,7 @@ export default function Navbar() {
               <div className="flex items-center px-4">
                 <div className="flex-shrink-0">
                   <img
-                    className="h-10 w-10 rounded-full"
+                    className="w-10 h-10 rounded-full"
                     src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                     alt=""
                   />
@@ -237,10 +255,10 @@ export default function Navbar() {
                 </div>
                 <button
                   type="button"
-                  className="ml-auto flex-shrink-0 bg-white p-1 text-gray-400 rounded-full hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                  className="flex-shrink-0 p-1 ml-auto text-gray-400 bg-white rounded-full hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                 >
                   <span className="sr-only">View notifications</span>
-                  <BellIcon className="h-6 w-6" aria-hidden="true" />
+                  <BellIcon className="w-6 h-6" aria-hidden="true" />
                 </button>
               </div>
               <div className="mt-3 space-y-1">

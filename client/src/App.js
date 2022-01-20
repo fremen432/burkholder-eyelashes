@@ -10,6 +10,9 @@ import Admin from './components/Admin';
 import Selection from "./pages/Selection";
 import Footer from "./components/Footer";
 import Error from "./components/NoMatch";
+import Cart from "./components/Cart";
+import OrderHistory from "./components/OrderHistory";
+import OrderSummary from "./components/OrderSummary";
 
 import './App.css';
 
@@ -26,6 +29,9 @@ function App() {
           <Route exact path='/contact' component={Contact} />
           <Route exact path='/faq' component={FAQ} />
           <Route exact path='/admin' component={Admin} />
+          <Route exact path='/cart' component={Cart} />
+          <Route exact path='/orderhistory' component={OrderHistory} />
+          <Route exact path='/ordersummary' component={OrderSummary} />
           <Route exact path='/registration' component={Registration} />
           <Route component={Error} />
         </Switch>
