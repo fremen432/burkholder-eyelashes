@@ -7,17 +7,17 @@ const resolvers = {
     Query: {
         //fine one user and populate the items and history ref
         user: async (parent, {username}) => {
-            return User.findOne({username}).populate('items').populate('histories').exec()
+            return User.findOne({username}).populate('items').populate({path:'history', populate: {path: 'items'} }).exec()
         },
 
         //find all user and populate the item and history ref
         users: async () => {
-            return User.find().populate('items').populate('histories').exec();
+            return User.find().populate('items').populate({path:'history', populate: {path: 'items'} }).exec();
         },
 
         //find all item (review is already included because it is a schema under item). sort item by createdAt
         items: async () => {
-            return Item.find().sort({ createdAt: -1 })
+            return Item.find().populate('review')
         },
 
         //find single item with the itemID
@@ -52,7 +52,7 @@ const resolvers = {
             const correctPw = await user.isCorrectPassword(password)
 
             if(!correctPw) {
-                throw new AuthenticationError('Incorrect credentials')
+                throw new AuthenticationError('Incorrect Password')
             }
 
             const token = signToken(user)
@@ -79,8 +79,12 @@ const resolvers = {
             )
         },
 
-        createHistory: async (parent, {username, userId}) => {
-            const history = await History.create({ username, userId })
+        createHistory: async (parent, {username, itemArray}) => {
+            if (!itemArray){
+                itemArray = []
+            };
+
+            const history = await History.create({ username, itemArray })
 
             return history
         },

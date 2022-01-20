@@ -1,38 +1,12 @@
 import { gql } from '@apollo/client'
 
 export const QUERY_USERS = gql`
-    query users {
-        _id
-        username
-        email
-        items {
-            _id
-            name
-            description
-            count
-            price
-            review{
-                reviewId
-                reviewBody
-                writtenBy
-                createdAt
-            }
-        }
-        history {
-            orderId
-            username
-            userId
-        }
-    }
-`;
-
-export const QUERY_USER = gql `
-    query user($username: String!) {
-        user(username: $username){
+    query getUsers {
+        users {
             _id
             username
             email
-            items{
+            items {
                 _id
                 name
                 description
@@ -41,32 +15,42 @@ export const QUERY_USER = gql `
             }
             history{
                 orderId
+                items{
+                    name
+                    price
+                }
                 username
-                userId
             }
         }
     }
 `;
 
-export const QUERY_ITEMS = gpl`
-    query items {
-        _id
-        name
-        description
-        count
-        price
-        review {
-            reviewId
-            reviewBody
-            writtenBy
-            createdAt
+export const QUERY_USER = gql `
+    query getUser($username: String!) {
+        user(username: $username){
+            _id
+            username
+            email
+            items{
+                name
+                description
+                count
+                price
+            }
+            history{
+                orderId
+                items{
+                    name
+                    price
+                }
+            }
         }
     }
 `;
 
-export const QUERY_ITEM = gql `
-    query item($itemId: ID!){
-        item(itemId: $itemID){
+export const QUERY_ITEMS = gql`
+    query getItems {
+        items {
             _id
             name
             description
@@ -82,35 +66,49 @@ export const QUERY_ITEM = gql `
     }
 `;
 
-export const QUERY_HISTORIES = gql`
-    query histories{
-        orderId: ID!
-        items {
-            _id: ID
-            name: String!
-            description: String!
-            count: Int!
-            price: Int!
+export const QUERY_ITEM = gql `
+    query getItem($itemId: ID!){
+        item(itemId: $itemId){
+            _id
+            name
+            description
+            count
+            price
+            review{
+                reviewBody
+                writtenBy
+                createdAt
+            }
         }
-        username: String!
-        userId: ID!
-        createdAt: String
+    }
+`;
+
+export const QUERY_HISTORIES = gql`
+    query getHistories{
+        histories {
+            orderId
+            username
+            createdAt
+            items{
+                name
+                price
+            }
+        }
     }
 `;
 
 export const QUERY_HISTORY = gql`
     query history($orderId: ID!){
         history(orderId: $orderId){
-            orderId: ID!
+            orderId
             items {
-                _id: ID
-                name: String!
-                description: String!
-                count: Int!
-                price: Int!
+                _id
+                name
+                description
+                count
+                price
             }
-            username: String!
-            userId: ID!
-            createdAt: String
+            username
+            createdAt
         }
     }`

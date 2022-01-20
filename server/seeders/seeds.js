@@ -23,6 +23,8 @@ db.once('open', async () => {
     userData.push({ username, email, password, role_id });
   }
 
+  console.log(userData)
+
   const createdUsers = await User.collection.insertMany(userData)
 
   //create items
@@ -75,11 +77,11 @@ db.once('open', async () => {
       items.push(itemId);
     };
 
-    const createdHistory = await History.create({username, items, userId});
+    const createdHistory = await History.create({username, items});
 
     await User.updateOne(
       { _id: userId},
-      { $push: {histories: createdHistory.orderId }}
+      { $push: {history: createdHistory._id }}
     )
   }
   

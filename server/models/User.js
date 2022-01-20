@@ -27,7 +27,7 @@ const userSchema = new Schema(
                 ref: 'Item'
             }
         ],
-        histories: [
+        history: [
             {
                 type: Schema.Types.ObjectId,
                 ref: "History"
