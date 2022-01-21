@@ -4,7 +4,9 @@ import Collections from '../components/Collections';
 import Products from '../components/Products';
 import Blog from '../components/Blog';
 
+
 const Home = () => {
+
     return (
         <div>
             <Hero />
