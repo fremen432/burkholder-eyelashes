@@ -6,7 +6,7 @@
     </a>
 </h1>
 <div align="center">
-    <img src="public/images/screenshot.jpg" width="600px">
+    <img src="./client/src/images/screenshot.gif" width="600px">
 </div>
 
 ## Table of Contents
