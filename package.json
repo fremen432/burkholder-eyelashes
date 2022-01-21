@@ -21,17 +21,6 @@
     "url": "https://github.com/fremen432/burkholder-eyelashes/issues"
   },
   "homepage": "https://github.com/fremen432/burkholder-eyelashes#readme",
-  "dependencies": {
-    "@stripe/react-stripe-js": "^1.7.0",
-    "@stripe/stripe-js": "^1.22.0",
-    "axios": "^0.25.0",
-    "cors": "^2.8.5",
-    "dotenv": "^14.2.0",
-    "react-router-dom": "^6.2.1",
-    "stripe": "^8.198.0",
-    "body-parser": "^1.19.0",
-    "express": "^4.17.1"
-  },
   "devDependencies": {
     "concurrently": "^7.0.0"
   }
